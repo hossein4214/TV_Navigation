@@ -1,0 +1,55 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/navigation"
+    app:startDestination="@id/leftFragment">
+
+    <fragment
+        android:id="@+id/firstFragment"
+        android:name="com.example.tvbottomnavigation.FirstFragment"
+        android:label="fragment_first"
+        tools:layout="@layout/fragment_first" >
+        <action
+            android:id="@+id/action_firstFragment_to_detailFragment"
+            app:destination="@id/detailFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/secondFragment"
+        android:name="com.example.tvbottomnavigation.SecondFragment"
+        android:label="fragment_second"
+        tools:layout="@layout/fragment_second" />
+    <fragment
+        android:id="@+id/thirdFragment"
+        android:name="com.example.tvbottomnavigation.ThirdFragment"
+        android:label="fragment_third"
+        tools:layout="@layout/fragment_third" />
+    <fragment
+        android:id="@+id/leftFragment"
+        android:name="com.example.tvbottomnavigation.LeftFragment"
+        android:label="fragment_left"
+        tools:layout="@layout/fragment_left" >
+        <action
+            android:id="@+id/action_leftFragment_to_firstFragment"
+            app:destination="@id/firstFragment" />
+        <action
+            android:id="@+id/action_leftFragment_to_secondFragment"
+            app:destination="@id/secondFragment" />
+        <action
+            android:id="@+id/action_leftFragment_to_thirdFragment"
+            app:destination="@id/thirdFragment" />
+    </fragment>
+    <action
+        android:id="@+id/action_global_leftFragment"
+        app:destination="@id/leftFragment"
+        app:popUpTo="@id/navigation"
+        app:popUpToInclusive="true" />
+    <fragment
+        android:id="@+id/detailFragment"
+        android:name="com.example.tvbottomnavigation.DetailFragment"
+        android:label="DetailFragment" >
+        <argument
+            android:name="barbers"
+            app:argType="com.example.tvbottomnavigation.Barber" />
+    </fragment>
+</navigation>

@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraint"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:context=".MainActivity">
+
+        <!--
+            <androidx.slidingpanelayout.widget.SlidingPaneLayout
+                android:id="@+id/slidingPaneLayout"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:orientation="horizontal"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintBottom_toBottomOf="parent">
+
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_left"
+                    android:layout_width="0dp"
+                    android:layout_weight="1"
+                    android:name="com.example.tvbottomnavigation.LeftFragment"
+                    android:layout_height="match_parent"
+                />
+                <androidx.fragment.app.FragmentContainerView
+                    android:id="@+id/fragment_right"
+                    android:layout_width="0dp"
+                    android:layout_height="match_parent"
+                    android:layout_weight="4"
+                    android:name="androidx.navigation.fragment.NavHostFragment"
+                    app:defaultNavHost="true"
+                    app:navGraph="@navigation/navigation"
+                    />
+            </androidx.slidingpanelayout.widget.SlidingPaneLayout>
+        -->
+
+            <fragment
+                android:id="@+id/fragment"
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toEndOf="@id/menu"
+                android:name="androidx.navigation.fragment.NavHostFragment"
+                app:defaultNavHost="true"
+                app:navGraph="@navigation/navigation"
+                 />
+
+        <LinearLayout
+            android:id="@+id/menu"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:orientation="vertical"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline1">
+
+            <Button
+                android:id="@+id/menu_first"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text 1"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="@drawable/item_back" />
+
+            <Button
+                android:id="@+id/menu_second"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text 2"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="@drawable/item_back" />
+
+            <Button
+                android:id="@+id/menu_third"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="text 3"
+                android:layout_marginVertical="8dp"
+                android:backgroundTint="@drawable/item_back" />
+
+
+        </LinearLayout>
+
+        <!--<androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/fra_fi_rv"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintEnd_toEndOf="@id/guideline1"
+            tools:listitem="@layout/row_person"
+            />-->
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.2" />
+
+        <androidx.constraintlayout.widget.Guideline
+            android:id="@+id/guideline2"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            app:layout_constraintGuide_percent="0.08" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
