@@ -1,5 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="DesignSurface">
+    <option name="filePathToZoomLevelMap">
+      <map>
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/back_drawer.xml" value="0.24765625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/back_fra_home_content.xml" value="0.515625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/back_fra_home_learn.xml" value="0.515625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/back_fra_home_store.xml" value="0.515625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_account.xml" value="0.13984375" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_android_black_24dp.xml" value="0.31953125" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_content.xml" value="0.24765625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_exit.xml" value="0.24765625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_home.xml" value="0.24765625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_special_offer.xml" value="0.24765625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/ic_store.xml" value="0.24765625" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/item_back.xml" value="0.20277777777777778" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/drawable/my_drawable.xml" value="0.21" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/activity_main.xml" value="0.25" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/fragment_detail.xml" value="0.248" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/fragment_first.xml" value="0.33" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/fragment_left.xml" value="0.5173333333333333" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/fragment_third.xml" value="0.248" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/row_person.xml" value="0.5" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/layout/test.xml" value="0.248" />
+        <entry key="..\:/Users/hosse/StudioProjects/TV_Navigation/app/src/main/res/menu/menu.xml" value="0.51875" />
+      </map>
+    </option>
+  </component>
   <component name="ProjectRootManager" version="2" languageLevel="JDK_1_8" default="true" project-jdk-name="1.8" project-jdk-type="JavaSDK">
     <output url="file://$PROJECT_DIR$/build/classes" />
   </component>

@@ -12,4 +12,32 @@
     <color name="green">#00ff00</color>
     <color name="blue">#0000ff</color>
 
+    <color name="theme_red">#dd3a1b</color>
+    <color name="theme_blue">#276DF7</color>
+    <color name="theme_black">#181818</color>
+    <color name="theme_gray">#e4e7eb</color>
+    <color name="theme_gray_light">#9b9b9b</color>
+    <color name="theme_gray_middle">#21252f</color>
+    <color name="theme_gray_dark">#1f1f23</color>
+    <color name="theme_gray_semidark">#516c87</color>
+    <color name="theme_silver">#e8edf3</color>
+    <color name="theme_silver_dark">#4f6b85</color>
+    <color name="theme_blue_dark">#2861d4</color>
+
+    <!--
+    -color-gray: #e4e7eb;
+    -color-gray-light: #9b9b9b;
+    -color-gray-middle: #21252f;
+    -color-gray-dark: #1f1f23;
+    -color-gray-semidark: #516c87;
+    -color-silver: #e8edf3;
+    -color-silver-dark: #4f6b85;
+    -color-blue: #276df7;
+    -color-blue-dark: #2861d4;
+    -color-black: #020202;
+    -color-white: #ffff;
+    -color-red: #dd3a1b;
+    -font-iransans: "iranSansWeb";
+    }
+    -->
 </resources>

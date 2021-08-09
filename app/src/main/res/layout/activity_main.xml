@@ -5,12 +5,22 @@
 
     <data>
 
+        <variable
+            name="isSelected"
+            type="java.lang.Integer" />
+
+        <variable
+            name="isExpand"
+            type="java.lang.Boolean" />
+
+        <import type="android.view.View" />
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraint"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
+        android:background="@color/theme_black"
         tools:context=".MainActivity">
 
         <!--
@@ -43,51 +53,232 @@
             </androidx.slidingpanelayout.widget.SlidingPaneLayout>
         -->
 
-            <fragment
-                android:id="@+id/fragment"
-                android:layout_width="0dp"
-                android:layout_height="match_parent"
-                app:layout_constraintEnd_toEndOf="parent"
-                app:layout_constraintStart_toEndOf="@id/menu"
-                android:name="androidx.navigation.fragment.NavHostFragment"
-                app:defaultNavHost="true"
-                app:navGraph="@navigation/navigation"
-                 />
-
-        <LinearLayout
-            android:id="@+id/menu"
+        <fragment
+            android:id="@+id/fragment"
+            android:name="androidx.navigation.fragment.NavHostFragment"
             android:layout_width="0dp"
             android:layout_height="match_parent"
-            android:orientation="vertical"
+            app:defaultNavHost="true"
+            app:layout_constraintEnd_toStartOf="@id/ac_main_drawer"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintEnd_toEndOf="@id/guideline1">
+            app:navGraph="@navigation/navigation" />
 
-            <Button
-                android:id="@+id/menu_first"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="text 1"
-                android:layout_marginVertical="8dp"
-                android:backgroundTint="@drawable/item_back" />
 
-            <Button
-                android:id="@+id/menu_second"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="text 2"
-                android:layout_marginVertical="8dp"
-                android:backgroundTint="@drawable/item_back" />
+        <LinearLayout
+            android:id="@+id/ac_main_drawer"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:elevation="16dp"
+            android:gravity="right|center_vertical"
+            android:background="@color/theme_black"
+            android:orientation="vertical"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="@id/guideline1">
 
-            <Button
-                android:id="@+id/menu_third"
+            <androidx.constraintlayout.widget.ConstraintLayout
                 android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:text="text 3"
-                android:layout_marginVertical="8dp"
-                android:backgroundTint="@drawable/item_back" />
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ac_main_drawer_home"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/item_back"
+                    android:gravity="center_vertical|start"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingVertical="4dp"
+                    android:paddingRight="24dp"
+                    android:text="@{isExpand?@string/home:null,default=@string/home}"
+                    android:textColor="@{isSelected==0?@color/theme_blue:@color/theme_gray}"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_home"
+                    app:iconGravity="end"
+                    app:iconPadding="16dp"
+                    app:iconTint="@{isSelected==0?@color/theme_blue:@color/theme_gray}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:layout_width="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/my_drawable"
+                    android:elevation="8dp"
+                    android:visibility="@{isSelected==0?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ac_main_drawer_store"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:backgroundTint="@color/item_back"
+                    android:gravity="center_vertical|start"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingVertical="4dp"
+                    android:paddingRight="24dp"
+                    android:text="@{isExpand?@string/store:null,default=@string/store}"
+                    android:textColor="@{isSelected==1?@color/theme_blue:@color/theme_gray}"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_store"
+                    app:iconGravity="end"
+                    app:iconPadding="16dp"
+                    app:iconTint="@{isSelected==1?@color/theme_blue:@color/theme_gray}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:layout_width="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/my_drawable"
+                    android:elevation="8dp"
+                    android:visibility="@{isSelected==1?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ac_main_drawer_content"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:backgroundTint="@color/item_back"
+                    android:gravity="center_vertical|start"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingVertical="4dp"
+                    android:paddingRight="24dp"
+                    android:text="@{isExpand?@string/content:null,default=@string/content}"
+                    android:textColor="@{isSelected==2?@color/theme_blue:@color/theme_gray}"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_content"
+                    app:iconGravity="end"
+                    app:iconPadding="16dp"
+                    app:iconTint="@{isSelected==2?@color/theme_blue:@color/theme_gray}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:layout_width="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/my_drawable"
+                    android:elevation="8dp"
+                    android:visibility="@{isSelected==2?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ac_main_drawer_account"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:backgroundTint="@color/item_back"
+                    android:gravity="center_vertical|start"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingVertical="4dp"
+                    android:paddingRight="24dp"
+                    android:text="@{isExpand?@string/account:null,default=@string/account}"
+                    android:textColor="@{isSelected==3?@color/theme_blue:@color/theme_gray}"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_account"
+                    app:iconGravity="end"
+                    app:iconPadding="16dp"
+                    app:iconTint="@{isSelected==3?@color/theme_blue:@color/theme_gray}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:layout_width="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/my_drawable"
+                    android:elevation="8dp"
+                    android:visibility="@{isSelected==3?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <com.google.android.material.button.MaterialButton
+                    android:id="@+id/ac_main_drawer_exit"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    style="@style/Widget.MaterialComponents.Button.TextButton.Customize"
+                    android:backgroundTint="@color/item_back"
+                    android:gravity="center_vertical|start"
+                    android:insetTop="0dp"
+                    android:insetBottom="0dp"
+                    android:paddingVertical="4dp"
+                    android:paddingRight="24dp"
+                    android:text="@{isExpand?@string/exit:null,default=@string/exit}"
+                    android:textColor="@{isSelected==4?@color/theme_blue:@color/theme_gray}"
+                    android:textStyle="bold"
+                    app:icon="@drawable/ic_exit"
+                    app:iconGravity="end"
+                    app:iconPadding="16dp"
+                    app:iconTint="@{isSelected==4?@color/theme_blue:@color/theme_gray}"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <ImageButton
+                    android:layout_width="8dp"
+                    android:layout_height="0dp"
+                    android:layout_marginVertical="4dp"
+                    android:background="@drawable/my_drawable"
+                    android:elevation="8dp"
+                    android:visibility="@{isSelected==4?View.VISIBLE:View.GONE}"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
 
 
         </LinearLayout>
+
+        <TextView
+            android:id="@+id/drawer_text_sony"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            style="@style/SonyTextView"
+            android:text="SONYLAND"
+            android:visibility="@{isExpand?View.VISIBLE:View.GONE}"
+            android:textColor="@color/theme_gray"
+            android:gravity="center"
+            android:elevation="20dp"
+            android:textSize="20sp"
+            android:textStyle="bold"
+            android:layout_marginTop="16dp"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/fragment" />
 
         <!--<androidx.recyclerview.widget.RecyclerView
             android:id="@+id/fra_fi_rv"
@@ -103,14 +294,14 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.2" />
+            app:layout_constraintGuide_percent="0.8" />
 
         <androidx.constraintlayout.widget.Guideline
             android:id="@+id/guideline2"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:orientation="vertical"
-            app:layout_constraintGuide_percent="0.08" />
+            app:layout_constraintGuide_percent="0.930" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>

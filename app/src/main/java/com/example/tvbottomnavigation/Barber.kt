@@ -6,6 +6,7 @@ import kotlinx.android.parcel.Parcelize
 @Parcelize
 data class Barber(
         val name: String ,
-        val barberId: String
+        val barberId: String,
+        val image:String
 ) : Parcelable
 

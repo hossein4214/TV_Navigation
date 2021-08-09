@@ -20,67 +20,37 @@ import kotlinx.android.synthetic.main.activity_main.*
 class MainActivity : AppCompatActivity() {
     private lateinit var adapter: RecyclerAdapter<Barber>
     private lateinit var binding: ActivityMainBinding
-    private var isItemFocused = true
+    private var lastItemFocused = -1
     private var isExpanded = false
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        //val drawer: NavigationView = findViewById(R.id.navigation_view)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         val nav = Navigation.findNavController(this, R.id.fragment)
-        //NavigationUI.setupWithNavController(drawer,navController)
-        //initAdapter()
-        //fra_fi_rv.adapter = adapter
-        /*drawer.setNavigationItemSelectedListener { item ->
-            expand()
-            supportFragmentManager.popBackStack()
-            when (item.itemId) {
-                R.id.firstFragment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment, FirstFragment()).commit()
-                }
-                R.id.secondFragment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment, SecondFragment()).commit()
-                }
-                R.id.thirdFragment -> {
-                    supportFragmentManager.beginTransaction()
-                        .replace(R.id.fragment, ThirdFragment()).commit()
-                }
-            }
-            return@setNavigationItemSelectedListener true
-        }*/
-        binding.menuFirst.apply {
-            setOnClickListener {
-                /*if (isExpanded) {
-                    collapse()
-                    isExpanded = !isExpanded
-                }*/
 
+        binding.acMainDrawerHome.apply {
+            setOnClickListener {
+                binding.isSelected=0
+                lastItemFocused = 0
                 nav.navigate(R.id.action_global_leftFragment)
                 nav.navigate(R.id.action_leftFragment_to_firstFragment)
-                //binding.guideline1.requestFocus()
             }
             setOnFocusChangeListener { v, hasFocus ->
                 focusCheck()
                 if (hasFocus) {
                     if (!isExpanded) {
                         expand()
-                        isExpanded = !isExpanded
+                        isExpanded = true
                     }
-                    Log.e("Log", "Button1 Focus Changed $hasFocus")
                 }
             }
         }
-        binding.menuSecond.apply {
+        binding.acMainDrawerStore.apply {
             setOnClickListener {
-                /*if (isExpanded) {
-                    collapse()
-                    isExpanded = !isExpanded
-                }*/
+                binding.isSelected=1
+                lastItemFocused = 1
                 nav.navigate(R.id.action_global_leftFragment)
                 nav.navigate(R.id.action_leftFragment_to_secondFragment)
-                //binding.guideline1.requestFocus()
             }
             setOnFocusChangeListener { v, hasFocus ->
                 focusCheck()
@@ -88,21 +58,17 @@ class MainActivity : AppCompatActivity() {
                 if (hasFocus) {
                     if (!isExpanded) {
                         expand()
-                        isExpanded = !isExpanded
+                        isExpanded = true
                     }
-                    Log.e("Log", "Button2 Focus Changed $hasFocus")
                 }
             }
         }
-        binding.menuThird.apply {
+        binding.acMainDrawerContent.apply {
             setOnClickListener {
-                /*if (isExpanded) {
-                    collapse()
-                    isExpanded = !isExpanded
-                }*/
+                binding.isSelected = 2
+                lastItemFocused = 2
                 nav.navigate(R.id.action_global_leftFragment)
                 nav.navigate(R.id.action_leftFragment_to_thirdFragment)
-                //binding.guideline1.requestFocus()
             }
             setOnFocusChangeListener { v, hasFocus ->
                 focusCheck()
@@ -110,30 +76,50 @@ class MainActivity : AppCompatActivity() {
                 if (hasFocus) {
                     if (!isExpanded) {
                         expand()
-                        isExpanded = !isExpanded
+                        isExpanded = true
                     }
-                    Log.e("Log", "Button3 Focus Changed $hasFocus")
+                }
+            }
+        }
+        binding.acMainDrawerAccount.apply {
+            setOnClickListener {
+                binding.isSelected = 3
+                lastItemFocused = 3
+                nav.navigate(R.id.action_global_leftFragment)
+                nav.navigate(R.id.action_leftFragment_to_thirdFragment)
+            }
+            setOnFocusChangeListener { v, hasFocus ->
+                focusCheck()
+
+                if (hasFocus) {
+                    if (!isExpanded) {
+                        expand()
+                        isExpanded = true
+                    }
+                }
+            }
+        }
+        binding.acMainDrawerExit.apply {
+            setOnClickListener {
+                binding.isSelected = 4
+                lastItemFocused = 4
+                nav.navigate(R.id.action_global_leftFragment)
+                nav.navigate(R.id.action_leftFragment_to_thirdFragment)
+            }
+            setOnFocusChangeListener { v, hasFocus ->
+                focusCheck()
+
+                if (hasFocus) {
+                    if (!isExpanded) {
+                        expand()
+                        isExpanded = true
+                    }
                 }
             }
         }
     }
 
 
-    private fun initAdapter() {
-        adapter = RecyclerAdapter()
-        adapter.datas = arrayListOf(
-            Barber("name", "1"),
-            Barber("name2", "2"), Barber
-                ("name3", "3")
-        )
-        adapter.notifyDataSetChanged()
-        adapter.onClickHandler = object : OnClickHandler<Barber> {
-            override fun onClickItem(element: Barber) {}
-            override fun onClick(view: View) {}
-            override fun onClickView(view: View, element: Barber) {
-            }
-        }
-    }
 
     override fun onSupportNavigateUp(): Boolean {
         val navController = findNavController(R.id.fragment)
@@ -145,9 +131,18 @@ class MainActivity : AppCompatActivity() {
         val constSet = ConstraintSet()
         constSet.apply {
             clone(const)
-            connect(R.id.menu, ConstraintSet.END, R.id.guideline2, ConstraintSet.END)
+            connect(R.id.ac_main_drawer, ConstraintSet.START, R.id.guideline2, ConstraintSet.START)
             applyTo(const)
         }
+        when{
+            binding.acMainDrawerHome.isSelected-> lastItemFocused = 0
+            binding.acMainDrawerStore.isSelected-> lastItemFocused = 1
+            binding.acMainDrawerContent.isSelected-> lastItemFocused = 2
+            binding.acMainDrawerAccount.isSelected-> lastItemFocused = 3
+            binding.acMainDrawerExit.isSelected-> lastItemFocused = 4
+        }
+        Log.e("Hossein","Collapse -> $lastItemFocused")
+
     }
 
     private fun expand() {
@@ -155,16 +150,37 @@ class MainActivity : AppCompatActivity() {
         val constSet = ConstraintSet()
         constSet.apply {
             clone(const)
-            connect(R.id.menu, ConstraintSet.END, R.id.guideline1, ConstraintSet.END)
+            connect(R.id.ac_main_drawer, ConstraintSet.START, R.id.guideline1, ConstraintSet.START)
             applyTo(const)
         }
+        binding.isExpand = true
+        when(lastItemFocused){
+            0 ->{ binding.acMainDrawerHome.requestFocus()}
+            1 ->{ binding.acMainDrawerStore.requestFocus()}
+            2 ->{ binding.acMainDrawerContent.requestFocus()}
+            3 ->{ binding.acMainDrawerAccount.requestFocus()}
+            4 ->{ binding.acMainDrawerExit.requestFocus()}
+        }
+        Log.e("Hossein","Expand -> $lastItemFocused")
     }
 
     private fun focusCheck(){
-        if(!binding.menuFirst.isFocused && !binding.menuThird.isFocused && !binding.menuSecond.isFocused){
+        if(!binding.acMainDrawerHome.isFocused && !binding.acMainDrawerStore.isFocused && !binding.acMainDrawerContent.isFocused && !binding.acMainDrawerAccount.isFocused && !binding.acMainDrawerExit.isFocused){
             collapse()
-            isExpanded = !isExpanded
+            isExpanded = false
+            binding.isExpand =false
         }
+        Log.e("Hossein","Check Focus -> $lastItemFocused")
+
+    }
+
+    private fun clearFocus() {
+        /*binding.acMainDrawerHome.clearFocus()
+        binding.acMainDrawerStore.clearFocus()
+        binding.acMainDrawerContent.clearFocus()
+        binding.acMainDrawerAccount.clearFocus()
+        binding.acMainDrawerExit.clearFocus()*/
+        binding.acMainDrawer.requestFocus()
     }
 
 }

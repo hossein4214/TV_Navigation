@@ -14,10 +14,18 @@
         <item name="android:statusBarColor" tools:targetApi="l">?attr/colorPrimaryVariant</item>
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus">true</item>
+        <item name="fontFamily">@font/iran_sans</item>
 
     </style>
+    <style name="Widget.MaterialComponents.Button.TextButton.Customize" parent="Widget.MaterialComponents.Button.TextButton">
+        <item name="android:textColor">@color/theme_gray</item>
+        <item name="iconTint">@color/theme_gray</item>
+        <item name="android:backgroundTint">@color/item_back</item>
+        <item name="backgroundTint">@color/item_back</item>
+        <item name="rippleColor">@color/item_back</item>
+    </style>
 
-    <style name="MyRail" parent="Widget.MaterialComponents.NavigationRailView">
-
+    <style name="SonyTextView" parent="android:Widget.TextView">
+        <item name="fontFamily">@font/sony_bold</item>
     </style>
 </resources>

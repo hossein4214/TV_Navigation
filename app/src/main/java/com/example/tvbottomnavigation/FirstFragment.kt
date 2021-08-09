@@ -27,33 +27,21 @@ class FirstFragment : Fragment() {
     private fun initAdapter() {
         adapter = RecyclerAdapter()
         adapter.datas = arrayListOf(
-            Barber("name", "1"),
-            Barber("name2", "2"),
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3") ,
-            Barber("name3", "3")
+            Barber("سونی 1", "1","https://sonyland.co/storage/categories/August2021/gdSEdgAi02flIw1pzz.png"),
+            Barber("سونی 2", "2","https://sonyland.co/storage/products/July2021/tv_banner.png"),
+            Barber("سونی 3", "3","https://sonyland.co/storage/products/July2021/tv2.webp") ,
+            Barber("سونی 4", "4","https://sonyland.co/storage/products/July2021/tv1.webp") ,
+            Barber("سونی 5", "5","https://sonyland.co/storage/products/July2021/s2.webp") ,
+            Barber("سونی 6", "6","https://sonyland.co/storage/products/August2021/5pANPnXvx0TlHIXUXd.webp") ,
+            Barber("سونی 7", "7","https://sonyland.co/storage/products/July2021/tv_banner.png") ,
+            Barber("سونی 8", "8","https://sonyland.co/storage/categories/August2021/gdSEdgAi02flIw1pzz.png") ,
+            Barber("سونی 9", "9","https://sonyland.co/storage/products/July2021/tv_banner.png"),
+            Barber("سونی 10", "10","https://sonyland.co/storage/products/July2021/tv2.webp") ,
+            Barber("سونی 11", "11","https://sonyland.co/storage/products/July2021/tv1.webp") ,
+            Barber("سونی 12", "12","https://sonyland.co/storage/categories/August2021/gdSEdgAi02flIw1pzz.png") ,
+            Barber("سونی 13", "13","https://sonyland.co/storage/products/July2021/tv2.webp") ,
+            Barber("سونی 14", "14","https://sonyland.co/storage/products/July2021/tv_banner.png") ,
+            Barber("سونی 15", "15","https://sonyland.co/storage/categories/August2021/gdSEdgAi02flIw1pzz.png")
         )
         adapter.onClickHandler = object : OnClickHandler<Barber> {
             override fun onClickItem(element: Barber) {}

@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <selector xmlns:android="http://schemas.android.com/apk/res/android">
     <item android:state_pressed="true"
-        android:color="@color/yellow" /> <!-- pressed -->
-    <item android:state_focused="true"
-        android:color="@color/red" /> <!-- focused -->
+        android:color="@color/theme_gray_dark" /> <!-- pressed -->
+        <item android:state_focused="true"
+            android:color="#040404" /> <!-- focused -->
     <item android:state_hovered="true"
         android:color="@color/green" /> <!-- hovered -->
-    <item android:color="@color/blue" /> <!-- default -->
+    <item android:color="@android:color/transparent" /> <!-- default -->
 </selector>

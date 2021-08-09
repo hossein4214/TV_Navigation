@@ -23,7 +23,7 @@
             app:layout_constraintEnd_toEndOf="@id/guideline4"
             app:layout_constraintStart_toStartOf="@id/guideline3"
             app:layout_constraintTop_toTopOf="@id/guideline1"
-            app:srcCompat="@drawable/ic_android_black_24dp"
+            app:srcCompat="@drawable/ic_special_offer"
             app:tint="@color/green" />
 
 
