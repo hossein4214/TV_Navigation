@@ -23,7 +23,8 @@
     <color name="theme_silver">#e8edf3</color>
     <color name="theme_silver_dark">#4f6b85</color>
     <color name="theme_blue_dark">#2861d4</color>
-
+    <color name="theme_purple">#25013C</color>
+    <color name="theme_purple_light">#43006E</color>
     <!--
     -color-gray: #e4e7eb;
     -color-gray-light: #9b9b9b;

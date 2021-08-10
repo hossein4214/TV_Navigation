@@ -3,45 +3,92 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:padding="16dp"
+    android:background="@color/theme_black"
     tools:context=".SecondFragment">
 
     <!-- TODO: Update blank fragment layout -->
     <TextView
+        style="@style/SonyTextView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:gravity="center"
-        android:text="Second"
-        android:background="#ffcc00"
-        android:textSize="80sp" />
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"/>
-    <Button
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_gravity="bottom|start"/>
-    <Button
+        android:text="SONYLAND"
+        android:textColor="#44ffffff"
+        android:textSize="40sp" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button1"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="bottom|end"/>
-    <Button
+        android:text="سونی لند 1"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusRight="@id/button8"
+        android:nextFocusDown="@id/button2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button3"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="top|end"/>
-    <Button
+        android:layout_gravity="bottom|start"
+        android:text="سونی لند 3"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusRight="@id/button4"
+        android:nextFocusUp="@id/button2" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|start"/>
-    <Button
+        android:layout_gravity="bottom|end"
+        android:text="سونی لند 5"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusUp="@id/button6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button7"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|end"/>
-    <Button
+        android:layout_gravity="top|end"
+        android:text="سونی لند 7"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusDown="@id/button6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|top"/>
-    <Button
+        android:layout_gravity="center|start"
+        android:text="سونی لند 2"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusRight="@id/button6" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button6"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_gravity="center|bottom"/>
+        android:layout_gravity="center|end"
+        android:text="سونی لند 6"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusLeft="@id/button2"
+        android:nextFocusUp="@id/button7"
+        android:nextFocusDown="@id/button5" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|top"
+        android:text="سونی لند 8"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusDown="@id/button4" />
+
+    <com.google.android.material.button.MaterialButton
+        android:id="@+id/button4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_gravity="center|bottom"
+        android:text="سونی لند 4"
+        android:backgroundTint="@color/button_colors"
+        android:nextFocusUp="@id/button8" />
 </FrameLayout>

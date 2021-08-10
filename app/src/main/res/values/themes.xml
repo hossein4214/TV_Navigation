@@ -15,6 +15,7 @@
         <!-- Customize your theme here. -->
         <item name="android:windowTranslucentStatus">true</item>
         <item name="fontFamily">@font/iran_sans</item>
+        <item name="android:colorEdgeEffect">@color/theme_blue</item>
 
     </style>
     <style name="Widget.MaterialComponents.Button.TextButton.Customize" parent="Widget.MaterialComponents.Button.TextButton">

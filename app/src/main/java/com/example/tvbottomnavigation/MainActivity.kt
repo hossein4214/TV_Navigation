@@ -25,7 +25,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
-
+        binding.isExpand = true
         val nav = Navigation.findNavController(this, R.id.fragment)
 
         binding.acMainDrawerHome.apply {
@@ -174,13 +174,15 @@ class MainActivity : AppCompatActivity() {
 
     }
 
-    private fun clearFocus() {
-        /*binding.acMainDrawerHome.clearFocus()
-        binding.acMainDrawerStore.clearFocus()
-        binding.acMainDrawerContent.clearFocus()
-        binding.acMainDrawerAccount.clearFocus()
-        binding.acMainDrawerExit.clearFocus()*/
-        binding.acMainDrawer.requestFocus()
+
+    override fun onBackPressed() {
+        if(!isExpanded){
+            expand()
+            isExpanded = true
+            binding.isExpand = true
+        }else{
+            super.onBackPressed()
+        }
     }
 
 }
